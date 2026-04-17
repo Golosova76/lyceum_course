@@ -1,0 +1,139 @@
+/* Обнуление стилей */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+input,
+button,
+textarea {
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+    color: inherit;
+    background-color: inherit;
+}
+
+/* Обнуление стилей */
+
+
+:root {
+    --main-color: #333;
+    --accent-color: #007aff;
+    --base-font-family: "Roboto", sans-serif;;
+    --base-font-size: 16px;
+    --base-font-weight: 400;
+    --base-color-text: #434343;
+    --base-color-background: #fff;
+    --card-color-background: #F5F5F6;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+input,
+button,
+textarea {
+    font-family: var(--base-font-family), serif;
+}
+
+
+body {
+    color: var(--base-color-text);
+    line-height: 1;
+    font-family: var(--base-font-family), serif;
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+    background-color: var(--base-color-background);
+}
+.header__title.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: clip;
+}
+
+.wrapper > main {
+    flex: 1 1 auto;
+}
+
+[class*=__container] {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 5px;
+}
