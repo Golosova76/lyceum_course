@@ -68,10 +68,20 @@ button {
     --accent-color: #007aff;
     --base-font-family: "Roboto", sans-serif;;
     --base-font-size: 16px;
+    --button-font-size: 18px;
+    --title-h2-font-size: 36px;
+    --title-h3-font-size: 24px;
     --base-font-weight: 400;
+    --title-h2-font-weight: 500;
     --base-color-text: #434343;
+    --button-color-text: #525252;
+    --title-h2-color-text: #000;
     --base-color-background: #fff;
     --card-color-background: #F5F5F6;
+    --button-color-background: #ffdd2d;
+
+    --button-color-background-hover: #f5c400;
+    --button-color-text-hover: #000000;
 }
 
 @font-face {
@@ -135,5 +145,92 @@ body {
 [class*=__container] {
     max-width: 1170px;
     margin: 0 auto;
-    padding: 5px;
+    //padding: 5px;
 }
+
+/* section class="main__types-casco */
+
+.casco:not(:last-child) {
+    margin-bottom: 97px;
+}
+
+.main__types-casco {
+    padding-top: 75px;
+}
+
+.casco__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.casco__title {
+    font-size: clamp(var(--title-h3-font-size), 17px + 1.59vw, var(--title-h2-font-size));
+    font-weight: var(--title-h2-font-weight);
+    color: var(--title-h2-color-text);
+}
+
+.casco__title:not(:last-child) {
+    margin-bottom: clamp(80px, 69px + 2.65vw, 100px);
+}
+
+.casco__items {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.casco__items:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+
+.type-item {
+    flex: 0 1 50%;
+    width: 100%;
+    max-width: clamp(370px, 260px + 26.46vw, 570px);
+    padding: 50px 30px;
+    background-color: var(--card-color-background);
+}
+
+.type-item__title {
+    color: var(--title-h2-color-text);
+    font-size: clamp(var(--button-font-size), 14px + 0.79vw, var(--title-h3-font-size));
+}
+
+.type-item__title:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.type-item__text {
+    color: var(--base-color-text);
+    line-height: 150%;
+}
+
+.casco__button-calculation {
+    display: flex;
+    font-size: var(--button-font-size);
+    color: var(--button-color-text);
+    border-radius: 25px;
+    padding: 14px 60px 15px 58px;
+    background-color: var(--button-color-background);
+    transition: all 0.3s ease 0s;
+}
+
+.casco__button-calculation:hover {
+    color: var(--button-color-text-hover);
+    background-color: var(--button-color-background-hover);
+}
+
+@media (max-width: 1180px) {
+    .casco__items {
+        align-items: center;
+        justify-content: center;
+    }
+    .type-item {
+        flex: 0 1 100%;
+    }
+}
+
+/* section class="main__types-casco */
