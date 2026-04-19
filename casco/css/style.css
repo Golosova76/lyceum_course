@@ -73,15 +73,30 @@ button {
     --title-h3-font-size: 24px;
     --base-font-weight: 400;
     --title-h2-font-weight: 500;
+    --choice-font-weight: 300;
     --base-color-text: #434343;
     --button-color-text: #525252;
     --title-h2-color-text: #000;
     --base-color-background: #fff;
     --card-color-background: #F5F5F6;
     --button-color-background: #ffdd2d;
+    --border-color: #e4e4e4;
+    --choice-color: #636363;
 
     --button-color-background-hover: #f5c400;
     --button-color-text-hover: #000000;
+    --accordion-color-background-hover: #f7f7f7;
+    --accordion-color-hover: #222;
+    --accordion-color-background-active: #ececec;
+    --color-outline-active: #999;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -145,10 +160,20 @@ body {
 [class*=__container] {
     max-width: 1170px;
     margin: 0 auto;
-    //padding: 5px;
+}
+
+@media (max-width: 1180px) {
+    [class*=__container] {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
 }
 
 /* section class="main__types-casco */
+
+.main:not(:last-child) {
+    margin-bottom: 97px;
+}
 
 .casco:not(:last-child) {
     margin-bottom: 97px;
@@ -234,3 +259,140 @@ body {
 }
 
 /* section class="main__types-casco */
+
+.answers__title {
+    font-size: clamp(var(--title-h3-font-size), 17px + 1.59vw, var(--title-h2-font-size));
+    font-weight: var(--title-h2-font-weight);
+    color: var(--title-h2-color-text);
+    text-align: center;
+}
+
+.answers__title:not(:last-child) {
+    margin-bottom: clamp(80px, 69px + 2.65vw, 100px);
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.accordion__item {
+    display: flex;
+    border: 1px solid var(--border-color);
+}
+
+.accordion__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.accordion__answer {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer-style {
+    font-weight: var(--title-h2-font-weight);
+    font-size: var(--title-h2-font-size);
+    line-height: 154%;
+    text-align: center;
+    color: var(--base-color-background);
+    background-color: var(--button-color-background);
+    padding: 7px 24px;
+    max-width: 70px;
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 70px 12px 30px;
+    width: 100%;
+    //background-color: transparent;
+}
+
+.accordion__header:hover {
+    background-color: var(--accordion-color-background-hover);
+    color: var(--accordion-color-hover);
+}
+
+.accordion__header:active {
+    background-color: var(--accordion-color-background-active);
+}
+
+.accordion__header:focus {
+    outline: 2px solid transparent;
+}
+
+.accordion__header:focus-visible {
+    outline: 2px solid var(--color-outline-active);
+    outline-offset: -2px;
+}
+
+@media (max-width: 1180px) {
+    .accordion__header {
+        padding: 12px 20px 12px 20px;
+    }
+
+}
+
+.accordion__body {
+    color: var(--base-color-text);
+    line-height: 150%;
+    padding: 2px 70px 25px 30px;
+}
+
+.accordion__title {
+    font-size: var(--button-font-size);
+    color: var(--title-h2-color-text);
+}
+
+.accordion__icon {
+    font-weight: var(--choice-font-weight);
+    font-size: 40px;
+    text-align: center;
+    color: var(--choice-color);
+}
+
+.accordion__main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.accordion__item.active .accordion__icon::before {
+    content: '−';
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
+.accordion__icon::before {
+    content: '+';
+}
+
+.accordion__item.active .accordion__number {
+    display: none;
+}
+
+.accordion__item.active .accordion__answer {
+    display: flex;
+}
+.accordion__answer {
+    display: none;
+}
+
+.accordion__body {
+    display: none;
+}
+
+.accordion__item.active .accordion__body{
+    display: flex;
+}
+
