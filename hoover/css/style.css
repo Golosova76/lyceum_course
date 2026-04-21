@@ -75,6 +75,7 @@ button {
     --yandex-color-background: #fbdf32;
     --title-h2-font-weight: 500;
     --title-h2-font-size: 24px;
+    --title-score-font-size: 40px;
 
     --link-color-text: #0a48b8;
 
@@ -211,4 +212,45 @@ body {
 .slider__viewport {
     height: 582px;
     overflow: hidden;
+}
+
+.rating-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+}
+
+.rating-card__summary {
+    display: flex;
+}
+
+.rating-card__score {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 96px;
+    height: 96px;
+}
+
+.rating-card__score-value,
+.rating-card__score-ring {
+    grid-area: 1 / 1;
+}
+
+.rating-card__score-value {
+    z-index: 1;
+    font-weight: var(--title-h2-font-weight);
+    font-size: var(--title-score-font-size);
+    line-height: 70%;
+}
+
+.rating-card__title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 32px;
+    font-weight: var(--title-h2-font-weight);
+    font-size: 20px;
+    line-height: 140%;
+    max-width: 150px;
 }
