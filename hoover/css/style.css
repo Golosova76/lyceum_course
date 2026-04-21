@@ -66,22 +66,21 @@ button {
 :root {
     --base-font-family: "Rubik", sans-serif;;
     --base-font-size: 16px;
-    --base-color-background: #f3f3f3;
+    --base-color-background: #fff;
     --base-font-weight: 400;
     --base-color-text: #333;
 
     --block-color-background: #fff;
     --color-background: #f8f8fa;
     --yandex-color-background: #fbdf32;
+    --title-h2-font-weight: 500;
+    --title-h2-font-size: 24px;
 
     --link-color-text: #0a48b8;
 
 
 
     --button-font-size: 18px;
-    --title-h2-font-size: 36px;
-    --title-h3-font-size: 24px;
-    --title-h2-font-weight: 500;
     --button-color-text: #525252;
     --title-h2-color-text: #000;
     --card-color-background: #F5F5F6;
@@ -141,16 +140,75 @@ body {
 }
 
 .wrapper {
-    max-width: 1920px;
+    max-width: 1680px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--base-color-background);
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    padding: 32px;
+    border-radius: 32px;
 }
 
 .wrapper > main {
     flex: 1 1 auto;
 }
 
+.buy-score__title {
+    font-weight: var(--title-h2-font-weight);
+    font-size: var(--title-h2-font-size);
+    line-height: 133%;
+    color: var(--base-color-text);
+}
 
+.buy-score__title:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.buy-score__body {
+    display: flex;
+    gap: 32px;
+}
+
+.buy-score__image {
+    display: flex;
+    gap: 26px;
+}
+
+.buy-score__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 199px;
+    border-radius: 16px;
+    background-color: var(--color-background);
+}
+
+.buy-score__slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.slider__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 19px 45px;
+    border-radius: 8px;
+    background-color: var(--color-background);
+}
+
+.slider__track {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.slider__viewport {
+    height: 582px;
+    overflow: hidden;
+}
