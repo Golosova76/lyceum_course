@@ -49,4 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateSlider();
     }
+
+
+    const descriptionText = document.querySelector('[data-description-text]');
+    const descriptionToggle = document.querySelector('[data-description-toggle]');
+    const descriptionToggleText = document.querySelector('[data-description-toggle-text]');
+
+    if (descriptionText && descriptionToggle && descriptionToggleText) {
+        descriptionToggle.addEventListener('click', () => {
+            const isExpanded = descriptionText.classList.toggle('is-expanded');
+            descriptionToggle.classList.toggle('is-expanded', isExpanded);
+            descriptionToggleText.textContent = isExpanded ? 'Свернуть' : 'Читать полностью';
+            descriptionToggle.setAttribute('aria-expanded', String(isExpanded));
+        });
+    }
 });
