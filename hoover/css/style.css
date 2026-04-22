@@ -76,22 +76,14 @@ button {
     --title-h2-font-weight: 500;
     --title-h2-font-size: 24px;
     --title-score-font-size: 40px;
+    --rate-font-size: 18px;
+    --title-font-size: 20px;
 
     --link-color-text: #0a48b8;
 
-
-
-    --button-font-size: 18px;
-    --button-color-text: #525252;
-    --title-h2-color-text: #000;
-    --card-color-background: #F5F5F6;
-    --button-color-background: #ffdd2d;
-    --border-color: #e4e4e4;
-    --choice-color: #636363;
-
-
     --black-300: #dadada;
     --black-500: #808080;
+    --black: #000;
 
 }
 
@@ -217,8 +209,14 @@ body {
 .rating-card {
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 32px;
     padding: 32px;
+    border: 1px solid var(--black-500);
+    border-radius: 32px;
+    max-width: 791px;
+    //width: 100%;
+    max-height: 484px;
 }
 
 .rating-card__summary {
@@ -253,4 +251,76 @@ body {
     font-size: 20px;
     line-height: 140%;
     max-width: 150px;
+}
+
+
+.rating-card__metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: var(--rate-font-size);
+}
+
+.rating-card__item {
+    display: flex;
+    gap: 16px;
+}
+
+.rating-card__label {
+    min-width: 240px;
+    line-height: 133%;
+}
+
+.rating-card__progress {
+    flex: 1;
+    height: 16px;
+    background-color: var(--black-300);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.rating-card__bar-fill {
+    height: 100%;
+    width: 98%;
+    border-radius: 100px;
+    background: linear-gradient(225deg, #e9d418 0%, #e67105 100%);
+}
+
+.rating-card__value {
+    min-width: 26px;
+    line-height: 133%;
+}
+
+.rating-card__footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-card__product-name {
+    font-weight: var(--title-h2-font-weight);
+    font-size: var(--title-font-size);
+    line-height: 140%;
+    color: var(--base-color-text);
+}
+
+.button-rating-card {
+    display: flex;
+    gap: 24px;
+}
+
+.button-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.25);
+    background: var(--yandex-color-background);
+    padding: 16px 24px;
+}
+
+.button-rating-card__count {
+    font-weight: var(--title-h2-font-weight);
+    font-size: var(--base-font-size);
+    line-height: 150%;
+    color: var(--black);
 }
